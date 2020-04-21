@@ -32,8 +32,8 @@ public class JoueurController {
                 if(listJoueur.isEmpty()) return null; else return listJoueur;
     }
 
-    @RequestMapping(path = "/score/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Joueurs> getPlayersById(@PathVariable Long id){
+    @RequestMapping(path = "/scorebyId", method = RequestMethod.GET)
+    public ResponseEntity<Joueurs> getPlayersById(@RequestParam  Long id){
        Optional<Joueurs> joueur= joueurService.getJoueurById(id);
         return (joueur.isPresent()) ?
                 new ResponseEntity<>(joueur.get(), HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -41,12 +41,12 @@ public class JoueurController {
 
 
     @RequestMapping(path = "/delete", method = RequestMethod.DELETE)
-    public ResponseEntity<Joueurs> deleteJoueur(@RequestBody Joueurs user) {
-        joueurService.deleteJoueur(user.getJoueurId());
+    public ResponseEntity<Joueurs> deleteJoueur(@RequestParam Long id) {
+        joueurService.deleteJoueur(id);
         return new ResponseEntity<>(new Joueurs(), HttpStatus.OK);
     }
 
-    @RequestMapping(path = "/update", method = RequestMethod.PATCH)
+    @RequestMapping(path = "/score/update", method = RequestMethod.PATCH)
     public ResponseEntity<Joueurs> majJoueur(@RequestBody Joueurs user) {
         joueurService.updateJoueur(user);
         return new ResponseEntity<>(new Joueurs(), HttpStatus.OK);
