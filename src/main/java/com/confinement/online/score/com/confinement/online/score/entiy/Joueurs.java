@@ -8,16 +8,16 @@ import java.util.Date;
 @Table(name="Joueurs")
 public class Joueurs {
     @Id
-    @Column(name="joueurId")
+    @Column(name="joueur_Id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int joueurId;
+    private long joueurId;
     @Column(name="nom")
     private String nom;
     @Column(name="prenom")
     private String prenom;
     @Column(name="commentaire")
    private String commentaire;
-    @Column(name="dateJeu")
+    @Column(name="date_Jeu")
     private Date dateJeu;
     @Column(name="score")
    private int score;
@@ -27,7 +27,7 @@ public class Joueurs {
 
     }
 
-    public Joueurs(int joueurId, String nom, String prenom, String commentaire, Date dateJeu, int score) {
+    public Joueurs(long joueurId, String nom, String prenom, String commentaire, Date dateJeu, int score) {
         this.joueurId = joueurId;
         this.nom = nom;
         this.prenom = prenom;
@@ -36,11 +36,11 @@ public class Joueurs {
         this.score = score;
     }
 
-    public int getJoueurId() {
+    public long getJoueurId() {
         return joueurId;
     }
 
-    public void setJoueurId(int joueurId) {
+    public void setJoueurId(long joueurId) {
         this.joueurId = joueurId;
     }
 
