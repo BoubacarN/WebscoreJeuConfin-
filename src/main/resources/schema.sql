@@ -1,3 +1,5 @@
+delete from joueurs;
+drop table joueurs;
 CREATE TABLE Joueurs(
   joueur_Id SERIAL PRIMARY KEY,
   nom VARCHAR(16) NOT NULL,
