@@ -5,6 +5,6 @@ CREATE TABLE Joueurs(
   nom VARCHAR(16) NOT NULL,
   prenom VARCHAR(16) NOT NULL,
   commentaire VARCHAR(200) NOT NULL,
-  date_Jeu Date,
+  date_Jeu DATE,
   score BIGINT NOT NULL
 );

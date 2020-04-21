@@ -1,7 +1,7 @@
 package com.confinement.online.score.com.confinement.online.score.entiy;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 
 @Entity
